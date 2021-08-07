@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request,jsonify
-from flask_cors import CORS,cross_origin
+from flask_cors import CORS,cross_origin #in order to deploy it in dif country
 import requests
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 
 app = Flask(__name__)
 
+#here '/' is base url - which comes after ip address and port number
 @app.route('/',methods=['GET'])  # route to display the home page
 @cross_origin()
 def homePage():
